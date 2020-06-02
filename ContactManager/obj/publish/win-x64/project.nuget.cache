@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "+fMyiulmzGShD++pIyjfDzJ0QIDFTvHU7JvZXTovQlFM1U/t8EvqA3NozAYovk6DqRFP0B64RuNUz5hOrVLL4A==",
+  "success": true,
+  "projectFilePath": "E:\\Programme\\Visual Studio\\Projekte\\ContactManagerLessonsLearned\\ContactManager\\ContactManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.4\\microsoft.netcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.4\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.4\\microsoft.aspnetcore.app.runtime.win-x64.3.1.4.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

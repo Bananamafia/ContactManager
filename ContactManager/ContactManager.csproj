@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishTrimmed>true</PublishTrimmed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\AddContact.png" />
+    <None Remove="Images\Delete.png" />
+    <None Remove="Images\Edit.png" />
+    <None Remove="Images\Favourite.png" />
+    <None Remove="Images\NoFavourite.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AddContact.png" />
+    <Resource Include="Images\Delete.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Favourite.png" />
+    <Resource Include="Images\NoFavourite.png" />
+  </ItemGroup>
+
+</Project>

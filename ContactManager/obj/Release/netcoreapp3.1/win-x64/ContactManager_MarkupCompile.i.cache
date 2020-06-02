@@ -1,0 +1,20 @@
+﻿ContactManager
+1.0.0.0
+
+winexe
+C#
+.cs
+E:\Programme\Visual Studio\Projekte\ContactManagerLessonsLearned\ContactManager\obj\Release\netcoreapp3.1\win-x64\
+ContactManager
+none
+false
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1
+E:\Programme\Visual Studio\Projekte\ContactManagerLessonsLearned\ContactManager\App.xaml
+31823154206
+
+11-1097789546
+1921654412462
+MainWindow.xaml;Pages\ContactEditorPage.xaml;Pages\ContactOverviewPage.xaml;
+
+False
+

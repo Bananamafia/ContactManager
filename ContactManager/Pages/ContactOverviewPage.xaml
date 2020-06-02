@@ -1,0 +1,170 @@
+﻿<Page x:Class="ContactManager.Pages.ContactOverviewPage"    
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ContactManager.Pages"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="ContactOverviewPage">
+
+    
+    
+    <!--Navigation Buttons-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Navigation Bar-->
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
+              Background="CornflowerBlue">
+
+            <StackPanel Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+
+                <!--Searchbar-->
+                <Grid>
+                    <Grid>
+                        <TextBox x:Name="SearchbarTextBox"
+                                 TextChanged="SearchbarTextBox_TextChanged"
+                                 Width="300"
+                                 VerticalAlignment="Center"
+                                 FontSize="16" />
+
+                        <TextBlock IsHitTestVisible="False"
+                                   Text="Search..."
+                                   FontSize="16"
+                                   Margin="5,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Foreground="DarkGray">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility"
+                                            Value="Collapsed" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=SearchbarTextBox}"
+                                                     Value="">
+                                            <Setter Property="Visibility"
+                                                    Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+
+                </Grid>
+
+                <!--Buttons-->
+                <Button x:Name="AddSampleButton"
+                        Click="AddSampleButton_Click"
+                        Margin="30,0">Lore Ipsum</Button>
+
+                <Button x:Name="AddNewContactButton"
+                        Click="AddNewContactButton_Click"
+                        ToolTip="Add new contact"
+                        Margin="5,0"
+                        Background="#00000000"
+                        BorderThickness="0">
+                    <Image Source="/Images/AddContact.png" />
+                </Button>
+                <Button x:Name="EditButton"
+                        Click="EditButton_Click"
+                        ToolTip="Edit selected contact"
+                        Margin="5,0"
+                        Background="#00000000"
+                        BorderThickness="0">
+                    <Image Source="/Images/Edit.png" />
+                </Button>
+                <Button x:Name="DeleteButton"
+                        Click="DeleteButton_Click"
+                        ToolTip="Delete selected contact"
+                        Margin="5,0"
+                        Background="#00000000"
+                        BorderThickness="0">
+                    <Image Source="/Images/Delete.png" />
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--Overview-->
+        <ListView x:Name="ContactOverviewListView"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Margin="10">
+            <ListView.View>
+                <GridView>
+
+                    <!--isFavorite Column-->
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding isFavourite}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="isFavourite"
+                                                  Click="ContactOverviewHeader_Click">
+                                <GridViewColumnHeader.Content>
+                                    <Image Source="/Images/Favourite.png"
+                                           Height="17" />
+                                </GridViewColumnHeader.Content>
+                            </GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <!--Name Column-->
+                    <GridViewColumn DisplayMemberBinding="{Binding FullName}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Name"
+                                                  Tag="FullName"
+                                                  Click="ContactOverviewHeader_Click" />
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <!--Phonenumber Column-->
+                    <GridViewColumn DisplayMemberBinding="{Binding PhoneNumberPrivate}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Phone"
+                                                  Tag="PhoneNumberPrivate"
+                                                  Click="ContactOverviewHeader_Click" />
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <!--Mailaddress Column-->
+                    <GridViewColumn DisplayMemberBinding="{Binding MailAddress}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Mail Address"
+                                                  Tag="MailAdress"
+                                                  Click="ContactOverviewHeader_Click" />
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                    <!--Address Column-->
+                    <GridViewColumn DisplayMemberBinding="{Binding FullAddress}">
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Content="Address"
+                                                  Tag="FullAddress"
+                                                  Click="ContactOverviewHeader_Click" />
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>
